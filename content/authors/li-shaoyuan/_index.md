@@ -26,8 +26,9 @@ social:
     icon_pack: fas
     link: mailto:syli@sjtu.edu.cn
 superuser: true
+member_order: 1
 user_groups:
-  - 研究人员
+  - 教授
 ---
 
 李少远，上海交通大学讲席教授、博士生导师。1997 年于南开大学计算机与系统科学系获博士学位，2000 年上海交通大学控制科学与工程博士后出站后留校，曾任上海交通大学自动化系主任。

@@ -26,8 +26,9 @@ social:
     icon_pack: fas
     link: mailto:yuanyzou@sjtu.edu.cn
 superuser: false
+member_order: 2
 user_groups:
-  - 研究人员
+  - 教授
 ---
 
 邹媛媛，上海交通大学教授、博士生导师，办公室位于电信群楼 2-537。2009 年于上海交通大学获控制科学与工程博士学位，曾任华东理工大学讲师、副教授，2017 年起任上海交通大学副教授，2019 年晋升教授。曾多次赴香港大学、香港城市大学任研究助理，并于加拿大阿尔伯塔大学公派联合培养。

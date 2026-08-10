@@ -18,8 +18,9 @@ social:
     icon_pack: fas
     link: https://xiangyin.sjtu.edu.cn/
 superuser: false
+member_order: 3
 user_groups:
-  - 研究人员
+  - 教授
 ---
 
 殷翔，上海交通大学教授、博士生导师，2018 年入选国家高层次青年人才项目。
