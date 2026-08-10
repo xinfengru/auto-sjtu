@@ -18,9 +18,9 @@ social:
     icon_pack: fas
     link: https://shaohaibin.github.io
 superuser: false
-member_order: 10
+member_order: 6
 user_groups:
-  - 副研究员
+  - 副教授/副研究员
 ---
 
 邵海滨，上海交通大学副研究员，办公室位于电院群楼 2-309。主要研究具身群体智能、多智能体系统与集群无人系统，关注分布式控制理论、分布式多模态认知以及无人机、无人车、无人艇和机器人系统的协同控制。

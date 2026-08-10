@@ -19,9 +19,9 @@ social:
     icon_pack: fas
     link: https://sais.sjtu.edu.cn/faculty/591.html
 superuser: false
-member_order: 8
+member_order: 4
 user_groups:
-  - 副教授
+  - 副教授/副研究员
 ---
 
 宁超，上海交通大学长聘教轨副教授、博士生导师，国家级青年人才、小米青年学者，办公室位于电信群楼 2-535。2020 年曾在美国康奈尔大学从事博士后研究，2021 至 2023 年任上海交通大学助理教授，2024 年起任长聘教轨副教授。

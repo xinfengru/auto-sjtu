@@ -29,9 +29,9 @@ social:
     icon_pack: fas
     link: https://sais.sjtu.edu.cn/faculty/lixianwei.html
 superuser: false
-member_order: 5
+member_order: 3
 user_groups:
-  - 副教授
+  - 副教授/副研究员
 ---
 
 李贤伟，上海交通大学长聘副教授、博士生导师，办公室位于电院群楼 2-312。2015 年于哈尔滨工业大学获控制科学与工程博士学位，曾在香港大学、南洋理工大学和慕尼黑工业大学从事研究工作，并曾获洪堡学者资助。2019 年加入上海交通大学，2022 年起任副教授。

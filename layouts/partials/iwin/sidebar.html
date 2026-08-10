@@ -10,8 +10,7 @@
     {{ if $is_people }}
       <a class="active" href="{{ "people/" | relURL }}">教师</a>
       <a href="{{ "people/#group-0" | relURL }}">教授</a>
-      <a href="{{ "people/#group-1" | relURL }}">副教授</a>
-      <a href="{{ "people/#group-2" | relURL }}">副研究员</a>
+      <a href="{{ "people/#group-1" | relURL }}">副教授/副研究员</a>
     {{ else if or (eq $section "post") (in $path "/post/") }}
       <a class="active" href="{{ "post/" | relURL }}">新闻动态</a>
       <a href="{{ "event/" | relURL }}">学术活动</a>
