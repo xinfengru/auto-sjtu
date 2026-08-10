@@ -1,25 +1,16 @@
-# SITE SETUP
-# Guide: https://docs.hugoblox.com/tutorial/
-# Documentation: https://docs.hugoblox.com/
-# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
-
-# Appearance
-
 appearance:
   theme_day: minimal
   theme_night:
   font: native
   font_size: L
 
-# SEO
-
 marketing:
   seo:
     site_type: Organization
     local_business_type: ''
-    org_name: ''
-    description: 'A highly-customizable Hugo research group theme powered by Wowchemy website builder.'
-    twitter: 'GetResearchDev'
+    org_name: '上海交通大学自动化研究所'
+    description: '上海交通大学自动化研究所官方网站，展示研究团队、学术成果、新闻动态与学术活动。'
+    twitter: ''
   analytics:
     google_analytics: ''
     baidu_tongji: ''
@@ -28,8 +19,6 @@ marketing:
   verification:
     google: ''
     baidu: ''
-
-# Site header
 
 header:
   navbar:
@@ -41,25 +30,19 @@ header:
     show_search: true
     highlight_active_link: false
 
-# Site footer
-
 footer:
   copyright:
-    notice: '© {year} Me. This work is licensed under {license}'
+    notice: '© {year} 上海交通大学自动化研究所。本网站内容采用 {license} 许可协议。'
     license:
       enable: true
       allow_derivatives: false
       share_alike: true
       allow_commercial: false
 
-# Localization
-
 locale:
-  date_format: 'Jan 2, 2006'
-  time_format: '3:04 PM'
-  address_format: en-us
-
-# Site features
+  date_format: '2006年1月2日'
+  time_format: '15:04'
+  address_format: zh
 
 features:
   syntax_highlighter:
@@ -72,7 +55,7 @@ features:
   privacy_pack:
     enable: false
   repository:
-    url: 'https://github.com/<username>/<repository>'
+    url: 'https://github.com/xinfengru/auto-sjtu'
     content_dir: content
     branch: main
   avatar:
@@ -102,8 +85,6 @@ features:
     api_key: ''
     zoom: 15
 
-# Extensions
-
 extensions:
   decap_cms:
     branch: main
@@ -111,8 +92,6 @@ extensions:
   academicons:
     enable: true
 
-# Citation style
-
 publications:
-  date_format: January 2006
+  date_format: 2006年1月
   citation_style: apa

@@ -1,5 +1,4 @@
 ---
-# Leave the homepage title empty to use the site title
 title:
 date: 2022-10-24
 type: landing
@@ -8,18 +7,18 @@ sections:
   - block: hero
     content:
       title: |
-        Wowchemy
-        Research Group
+        上海交通大学
+        自动化研究所
       image:
         filename: welcome.jpg
       text: |
         <br>
-        
-        The **Wowchemy Research Group** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2016.
-  
+
+        欢迎访问**上海交通大学自动化研究所**。我们致力于自动化、控制科学与人工智能领域的科学研究、人才培养与技术创新。
+
   - block: collection
     content:
-      title: Latest News
+      title: 最新动态
       subtitle:
       text:
       count: 5
@@ -35,7 +34,7 @@ sections:
     design:
       view: card
       columns: '1'
-  
+
   - block: markdown
     content:
       title:
@@ -44,7 +43,7 @@ sections:
     design:
       columns: '1'
       background:
-        image: 
+        image:
           filename: coders.jpg
           filters:
             brightness: 1
@@ -58,8 +57,8 @@ sections:
 
   - block: collection
     content:
-      title: Latest Preprints
-      text: ""
+      title: 最新预印本
+      text: ''
       count: 5
       filters:
         folders:
@@ -74,7 +73,7 @@ sections:
       title:
       subtitle:
       text: |
-        {{% cta cta_link="./people/" cta_text="Meet the team →" %}}
+        {{% cta cta_link="./people/" cta_text="认识我们的团队 →" %}}
     design:
       columns: '1'
 ---

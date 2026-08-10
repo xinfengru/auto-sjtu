@@ -1,46 +1,28 @@
 ---
-# Display name
 title: Nelson Bighetti
-
-# Full Name (for SEO)
 first_name: Nelson
 last_name: Bighetti
-
-# Is this the primary user of the site?
 superuser: true
-
-# Role/position
-role: Professor of Artificial Intelligence
-
-# Organizations/Affiliations
+role: 人工智能教授
 organizations:
-  - name: Stanford University
+  - name: 斯坦福大学
     url: ''
-
-# Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
-
+bio: 研究方向包括分布式机器人、移动计算与可编程物质。
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
-
+  - 人工智能
+  - 计算语言学
+  - 信息检索
 education:
   courses:
-    - course: PhD in Artificial Intelligence
-      institution: Stanford University
+    - course: 人工智能博士
+      institution: 斯坦福大学
       year: 2012
-    - course: MEng in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
+    - course: 人工智能工程硕士
+      institution: 麻省理工学院
       year: 2009
-    - course: BSc in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
+    - course: 人工智能理学学士
+      institution: 麻省理工学院
       year: 2008
-
-# Social/Academic Networking
-# For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
-#   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
-#   form "mailto:your-email@example.com" or "#contact" for contact widget.
 social:
   - icon: envelope
     icon_pack: fas
@@ -54,24 +36,12 @@ social:
   - icon: github
     icon_pack: fab
     link: https://github.com/gcushen
-# Link to a PDF of your resume/CV from the About widget.
-# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-# - icon: cv
-#   icon_pack: ai
-#   link: files/cv.pdf
-
-# Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ''
-
-# Highlight the author in author lists? (true/false)
 highlight_name: false
-
-# Organizational groups that you belong to (for People widget)
-#   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Researchers
+  - 研究人员
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Nelson Bighetti 是斯坦福人工智能实验室的人工智能教授，主要研究分布式机器人、移动计算与可编程物质。他负责机器人神经生物学研究组，研究可自重构机器人、自组织机器人系统和移动传感器网络。
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+他的工作关注机器人系统如何通过分布式协作、自主感知与可编程结构适应复杂环境，并探索相关技术在智能系统中的应用。
