@@ -1,0 +1,76 @@
+{{ define "main" }}
+{{ $hero := resources.Get "media/coders.jpg" }}
+{{ $about := resources.Get "media/welcome.jpg" }}
+{{ $posts := first 4 (where site.RegularPages "Section" "post") }}
+{{ $events := first 3 (where site.RegularPages "Section" "event") }}
+
+<main class="iwin-home-main">
+  <section class="iwin-hero"{{ with $hero }} style="background-image: linear-gradient(90deg, rgba(10, 38, 68, .84), rgba(14, 53, 91, .35)), url('{{ .RelPermalink }}');"{{ end }}>
+    <div class="iwin-home-container iwin-hero-content">
+      <p class="iwin-hero-kicker">AUTOMATION · CONTROL · INTELLIGENCE</p>
+      <h1>上海交通大学<br>自动化研究所</h1>
+      <p>面向自动化、控制科学与人工智能前沿，开展科学研究、人才培养与技术创新。</p>
+      <div class="iwin-hero-actions">
+        <a class="iwin-button iwin-button-primary" href="{{ "tour/" | relURL }}">了解研究所</a>
+        <a class="iwin-button iwin-button-outline" href="{{ "people/" | relURL }}">教师队伍</a>
+      </div>
+    </div>
+    <div class="iwin-hero-cue" aria-hidden="true"><span></span></div>
+  </section>
+
+  <section class="iwin-home-section iwin-information">
+    <div class="iwin-home-container">
+      <div class="iwin-section-heading">
+        <div><span>Informations</span><h2>新闻广角</h2></div>
+        <a href="{{ "post/" | relURL }}">查看全部 <i class="fas fa-angle-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="iwin-news-layout">
+        <div class="iwin-news-feature">
+          {{ if gt (len $posts) 0 }}
+            {{ $lead := index $posts 0 }}
+            {{ $lead_image := $lead.Resources.GetMatch "featured*" }}
+            <a class="iwin-news-image" href="{{ $lead.RelPermalink }}"{{ with $lead_image }}{{ $processed := .Fill "920x540 Center" }} style="background-image: url('{{ $processed.RelPermalink }}');"{{ end }}><span class="iwin-news-date">{{ $lead.Date.Format "2006.01.02" }}</span></a>
+            <h3><a href="{{ $lead.RelPermalink }}">{{ $lead.Title }}</a></h3>
+            <p>{{ $lead.Summary | plainify | truncate 110 }}</p>
+          {{ else }}<div class="iwin-empty">新闻内容正在整理中</div>{{ end }}
+        </div>
+        <div class="iwin-news-list">
+          {{ range after 1 $posts }}
+            <article><time datetime="{{ .Date.Format "2006-01-02" }}"><strong>{{ .Date.Format "02" }}</strong><span>{{ .Date.Format "2006.01" }}</span></time><div><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><p>{{ .Summary | plainify | truncate 74 }}</p></div></article>
+          {{ end }}
+          <div class="iwin-notice-title"><span>通知公告</span><a href="{{ "event/" | relURL }}">更多</a></div>
+          {{ range $events }}<a class="iwin-notice-item" href="{{ .RelPermalink }}"><span>{{ .Date.Format "2006-01-02" }}</span><strong>{{ .Title }}</strong></a>{{ else }}<p class="iwin-empty-inline">通知内容正在整理中</p>{{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="iwin-home-section iwin-research-section">
+    <div class="iwin-home-container">
+      <div class="iwin-section-heading iwin-section-heading-light"><div><span>Research</span><h2>科研方向</h2></div><a href="{{ "publication/" | relURL }}">科研成果 <i class="fas fa-angle-right" aria-hidden="true"></i></a></div>
+      <div class="iwin-research-grid">
+        <a href="{{ "publication/" | relURL }}"><b>01</b><i class="fas fa-project-diagram" aria-hidden="true"></i><h3>网络化系统与协同控制</h3><p>面向复杂网络系统的分布式控制、优化与协同决策。</p></a>
+        <a href="{{ "publication/" | relURL }}"><b>02</b><i class="fas fa-robot" aria-hidden="true"></i><h3>多智能体与无人系统</h3><p>研究多智能体协同、群体智能及无人系统自主控制。</p></a>
+        <a href="{{ "publication/" | relURL }}"><b>03</b><i class="fas fa-industry" aria-hidden="true"></i><h3>工业智能与过程优化</h3><p>融合数据、模型与人工智能的工业过程控制与优化。</p></a>
+        <a href="{{ "publication/" | relURL }}"><b>04</b><i class="fas fa-shield-alt" aria-hidden="true"></i><h3>信息物理系统安全</h3><p>开展信息物理系统风险识别、异常检测与安全防护。</p></a>
+        <a href="{{ "publication/" | relURL }}"><b>05</b><i class="fas fa-brain" aria-hidden="true"></i><h3>人工智能与智能决策</h3><p>探索数据驱动、强化学习和智能优化的理论与应用。</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="iwin-home-section iwin-about-section">
+    <div class="iwin-home-container iwin-about-layout">
+      <div class="iwin-about-image"{{ with $about }} style="background-image: url('{{ .RelPermalink }}');"{{ end }}><span>ABOUT US</span></div>
+      <div class="iwin-about-copy">
+        <div class="iwin-section-heading"><div><span>About Us</span><h2>中心简介</h2></div></div>
+        <h3>以控制科学为根基，面向智能时代持续创新</h3>
+        <p>上海交通大学自动化研究所围绕自动化、控制科学与工程、人工智能及相关交叉领域，开展基础理论研究、关键技术攻关和高层次人才培养。</p>
+        <p>研究所重视开放合作与学术交流，致力于推动科研成果服务国家需求和产业发展，建设具有持续创新能力的科研与育人平台。</p>
+        <a class="iwin-text-link" href="{{ "tour/" | relURL }}">了解更多 <i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="iwin-home-cta"><div class="iwin-home-container"><div><span>OUR TEAM</span><h2>汇聚优秀人才，共同探索自动化前沿</h2></div><a class="iwin-button iwin-button-primary" href="{{ "people/" | relURL }}">认识我们的团队</a></div></section>
+</main>
+{{ end }}
