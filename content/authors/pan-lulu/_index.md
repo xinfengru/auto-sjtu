@@ -18,9 +18,9 @@ social:
     icon_pack: fas
     link: https://llp26.github.io/
 superuser: false
-member_order: 9
+member_order: 5
 user_groups:
-  - 副研究员
+  - 副教授/副研究员
 ---
 
 潘鹿鹿，上海交通大学副研究员，办公室位于电信群楼 2-539。主要研究网络系统的控制、学习、优化与博弈，围绕矩阵权重网络、多智能体协同控制、分布式隐私保护等方向开展理论与应用研究。

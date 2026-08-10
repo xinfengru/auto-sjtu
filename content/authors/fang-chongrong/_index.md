@@ -18,9 +18,9 @@ social:
     icon_pack: fas
     link: https://sais.sjtu.edu.cn/faculty/fangchongrong.html
 superuser: false
-member_order: 7
+member_order: 2
 user_groups:
-  - 副教授
+  - 副教授/副研究员
 ---
 
 方崇荣，上海交通大学长聘教轨副教授、博士生导师，办公室位于电信群楼 2-400。2021 至 2023 年任上海交通大学助理教授，2024 年起任长聘教轨副教授。

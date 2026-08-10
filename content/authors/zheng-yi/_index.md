@@ -29,9 +29,9 @@ social:
     icon_pack: fas
     link: https://sais.sjtu.edu.cn/faculty/zhengyi.html
 superuser: false
-member_order: 6
+member_order: 7
 user_groups:
-  - 副教授
+  - 副教授/副研究员
 ---
 
 郑毅，上海交通大学副教授，办公室位于电信群楼 2-307。2010 年于上海交通大学获控制理论与工程博士学位，曾任职于通用电气中国研发中心，2012 年起在上海交通大学工作，并曾赴加拿大阿尔伯塔大学和美国加州大学洛杉矶分校访学。

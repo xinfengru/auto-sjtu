@@ -27,9 +27,9 @@ social:
     icon_pack: fas
     link: https://tingbai.com.cn/
 superuser: false
-member_order: 4
+member_order: 1
 user_groups:
-  - 副教授
+  - 副教授/副研究员
 ---
 
 白婷，上海交通大学长聘教轨副教授、博士生导师，办公室位于电信群楼 2-512。2019 年于上海交通大学获控制科学与工程博士学位，先后在瑞典皇家理工学院（KTH）和美国康奈尔大学从事博士后研究，2026 年 3 月起任教于上海交通大学。
