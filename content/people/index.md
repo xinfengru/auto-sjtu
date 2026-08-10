@@ -8,13 +8,9 @@ sections:
     content:
       title: 认识我们的团队
       user_groups:
-        - 负责人
-        - 研究人员
-        - 研究生
-        - 行政人员
-        - 访问学者
-        - 校友
-      sort_by: Params.last_name
+        - 教授
+        - 副教授
+      sort_by: Params.member_order
       sort_ascending: true
     design:
       show_interests: false
