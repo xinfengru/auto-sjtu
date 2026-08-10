@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: 上海交通大学自动化研究所 # Website name
-baseURL: 'https://example.com/' # Website URL
+baseURL: 'https://xinfengru.github.io/auto-sjtu/' # Website URL
 
 ############################
 ## LANGUAGE
