@@ -1,0 +1,62 @@
+name: Apply primary navigation
+
+env:
+  WC_HUGO_VERSION: '0.135.0'
+
+on:
+  push:
+    paths:
+      - .github/workflows/apply-nav-652f347.yml
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  update-build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply navigation update
+        shell: bash
+        run: |
+          printf '%s' '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' | base64 -d > /tmp/nav-update.tgz
+          echo '006b90e18cff6a9e1befca676f4732a79d0d65e9ddbc39831cec727fa788a964  /tmp/nav-update.tgz' | sha256sum -c -
+          tar -xzf /tmp/nav-update.tgz
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add config/_default/menus.yaml config/_default/params.yaml content/tour/index.md content/post/_index.md content/people/index.md content/publication/_index.md content/student-training content/course-teaching content/culture content/recruitment
+          if ! git diff --cached --quiet; then
+            git commit -m 'Reorganize primary navigation'
+            git push
+          fi
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.WC_HUGO_VERSION }}
+          extended: true
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build with Hugo
+        env:
+          HUGO_ENVIRONMENT: production
+        run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
