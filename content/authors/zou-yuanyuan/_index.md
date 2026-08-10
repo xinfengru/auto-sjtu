@@ -26,7 +26,7 @@ social:
     icon_pack: fas
     link: mailto:yuanyzou@sjtu.edu.cn
 superuser: false
-member_order: 2
+member_order: 4
 user_groups:
   - 教授
 ---
