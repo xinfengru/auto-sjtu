@@ -1,5 +1,5 @@
 ---
-title: 研究成果
+title: 科学研究
 view: citation
 banner:
   caption: ''
