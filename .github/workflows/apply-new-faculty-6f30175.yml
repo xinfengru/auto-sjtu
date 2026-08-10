@@ -1,0 +1,77 @@
+name: Apply new faculty profiles
+
+env:
+  WC_HUGO_VERSION: '0.135.0'
+
+on:
+  push:
+    paths:
+      - .github/workflows/apply-new-faculty-6f30175.yml
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  update-build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply faculty profiles and official photos
+        shell: bash
+        run: |
+          printf '%s' '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' | base64 -d > /tmp/faculty-profiles.tgz
+          echo '1f5e9626e2029860e8521f19381eeb79c4ea0ea287151d20dd32d96d44171eb8  /tmp/faculty-profiles.tgz' | sha256sum -c -
+          tar -xzf /tmp/faculty-profiles.tgz
+          mkdir -p content/authors/{li-xianwei,zheng-yi,pan-lulu,shao-haibin,wang-jingcheng,fang-chongrong,ning-chao}
+          curl -fsSL --retry 3 -A 'Mozilla/5.0' 'https://sais.sjtu.edu.cn/upload/jiaoshiml/%E6%9D%8E%E8%B4%A4%E4%BC%9F.jpg' -o content/authors/li-xianwei/avatar.jpg
+          curl -fsSL --retry 3 -A 'Mozilla/5.0' 'https://sais.sjtu.edu.cn/upload/jiaoshiml/%E9%83%91%E6%AF%85.jpg' -o content/authors/zheng-yi/avatar.jpg
+          curl -fsSL --retry 3 -A 'Mozilla/5.0' 'https://sais.sjtu.edu.cn/upload/jiaoshiml/%E6%BD%98%E9%B9%BF%E9%B9%BF.jpg' -o content/authors/pan-lulu/avatar.jpg
+          curl -fsSL --retry 3 -A 'Mozilla/5.0' 'https://sais.sjtu.edu.cn/upload/image/20250815/20250815103856.jpg' -o content/authors/shao-haibin/avatar.jpg
+          curl -fsSL --retry 3 -A 'Mozilla/5.0' 'https://sais.sjtu.edu.cn/upload/jiaoshiml/%E7%8E%8B%E6%99%AF%E6%88%90.jpg' -o content/authors/wang-jingcheng/avatar.jpg
+          curl -fsSL --retry 3 -A 'Mozilla/5.0' 'https://sais.sjtu.edu.cn/upload/image/20251028/20251028112806.jpg' -o content/authors/fang-chongrong/avatar.jpg
+          curl -fsSL --retry 3 -A 'Mozilla/5.0' 'https://sais.sjtu.edu.cn/upload/image/20250815/20250815140417.jpg' -o content/authors/ning-chao/avatar.jpg
+          echo '89758ba486eca978645b0d75c2dd6b42b3737df1372f36dbb60d8be2f4d547a3  content/authors/li-xianwei/avatar.jpg' | sha256sum -c -
+          echo '93873b98680ffa81a9f5c13ed2d3e0250d334e5046cae21e5b476472d9ee6a50  content/authors/zheng-yi/avatar.jpg' | sha256sum -c -
+          echo '11dc3aff0b286f0a971d3fd923b16edebcc4239e7b41d3c6fdc209d2dc1faee9  content/authors/pan-lulu/avatar.jpg' | sha256sum -c -
+          echo 'aa7d0bb3472262a33e6dc82b39f01a8f952b95eadb9ec5b294f5a8a8eec6664e  content/authors/shao-haibin/avatar.jpg' | sha256sum -c -
+          echo '036ded82b71ec9fd311b341bacda8ca7b40c1152e8bfe6b019ec132624af4666  content/authors/wang-jingcheng/avatar.jpg' | sha256sum -c -
+          echo '2c1e28db64f64097b721e90a53a81e2906329c5f9f9d29369385217a5ae79b03  content/authors/fang-chongrong/avatar.jpg' | sha256sum -c -
+          echo '40e1871f0a2ea0f586922cd4cbfff26a0e70ec76e7b60df1efb12f81e4f0824d  content/authors/ning-chao/avatar.jpg' | sha256sum -c -
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add content/people/index.md content/authors/li-xianwei content/authors/zheng-yi content/authors/pan-lulu content/authors/shao-haibin content/authors/wang-jingcheng content/authors/fang-chongrong content/authors/ning-chao
+          if ! git diff --cached --quiet; then
+            git commit -m 'Add seven faculty profiles'
+            git push
+          fi
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.WC_HUGO_VERSION }}
+          extended: true
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build with Hugo
+        env:
+          HUGO_ENVIRONMENT: production
+        run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
