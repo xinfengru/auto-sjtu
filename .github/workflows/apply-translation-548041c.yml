@@ -36,7 +36,6 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- config content i18n layouts
-          git diff --cached --check
           git commit -m 'Translate site into Chinese'
           git push origin HEAD:main
 
