@@ -1,0 +1,12 @@
+{{ $title := "" }}
+{{ if eq .Kind "404" }}
+  {{ $title = printf "页面未找到 | %s" site.Title }}
+{{ else }}
+  {{ with .Params.seo.title }}
+    {{ $title = replace . "{brand}" site.Title }}
+  {{ else }}
+    {{ $title = .Title | default site.Title }}
+    {{ if ne $title site.Title }}{{ $title = printf "%s | %s" $title site.Title }}{{ end }}
+  {{ end }}
+{{ end }}
+{{ return $title }}
