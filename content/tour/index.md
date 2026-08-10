@@ -1,5 +1,5 @@
 ---
-title: 参观导览
+title: 中心简介
 date: 2022-10-24
 type: landing
 
