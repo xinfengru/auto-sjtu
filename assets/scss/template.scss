@@ -7,3 +7,24 @@
 .cta-group {
   justify-content: center;
 }
+
+// Match the institute-style navigation treatment on desktop.
+@media (min-width: 992px) {
+  .navbar {
+    border-top: 3px solid #244a78;
+  }
+
+  .navbar .navbar-nav .nav-link.active {
+    position: relative;
+  }
+
+  .navbar .navbar-nav .nav-link.active::after {
+    position: absolute;
+    right: 0;
+    bottom: -14px;
+    left: 0;
+    height: 3px;
+    content: '';
+    background: #2962ff;
+  }
+}
