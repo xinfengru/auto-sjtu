@@ -1,0 +1,31 @@
+{{ $section := .Section }}
+{{ $path := .RelPermalink }}
+{{ $is_people := or (or (eq $section "people") (eq $section "authors")) (or (in $path "/people/") (in $path "/author/")) }}
+{{ $title := .Title }}
+{{ if $is_people }}{{ $title = "教师队伍" }}{{ end }}
+
+<aside class="iwin-side-nav">
+  <div class="iwin-side-title"><span>{{ $title }}</span><small>{{ if $is_people }}FACULTY{{ else }}OVERVIEW{{ end }}</small></div>
+  <nav aria-label="栏目导航">
+    {{ if $is_people }}
+      <a class="active" href="{{ "people/" | relURL }}">教师</a>
+      <a href="{{ "people/#group-0" | relURL }}">教授</a>
+      <a href="{{ "people/#group-1" | relURL }}">副教授</a>
+      <a href="{{ "people/#group-2" | relURL }}">副研究员</a>
+    {{ else if or (eq $section "post") (in $path "/post/") }}
+      <a class="active" href="{{ "post/" | relURL }}">新闻动态</a>
+      <a href="{{ "event/" | relURL }}">学术活动</a>
+    {{ else if or (or (eq $section "publication") (eq $section "publication_types")) (in $path "/publication/") }}
+      <a class="active" href="{{ "publication/" | relURL }}">科研成果</a>
+      <a href="{{ "people/" | relURL }}">科研团队</a>
+    {{ else if or (eq $section "tour") (in $path "/tour/") }}
+      <a class="active" href="{{ "tour/" | relURL }}">中心简介</a>
+      <a href="{{ "people/" | relURL }}">教师队伍</a>
+      <a href="{{ "contact/" | relURL }}">联系我们</a>
+    {{ else }}
+      <a class="active" href="{{ .RelPermalink }}">栏目概览</a>
+      <a href="{{ "post/" | relURL }}">新闻动态</a>
+      <a href="{{ "contact/" | relURL }}">联系我们</a>
+    {{ end }}
+  </nav>
+</aside>

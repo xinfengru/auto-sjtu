@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{ $avatar := (.Resources.ByType "image").GetMatch "*avatar*" }}
+<section class="iwin-page-banner iwin-profile-banner"><div class="iwin-page-banner-inner"><span>Faculty Profile</span><h1>{{ .Title }}</h1></div></section>
+<div class="iwin-inner-shell">
+  {{ partial "iwin/sidebar.html" . }}
+  <main class="iwin-inner-content">
+    <div class="iwin-breadcrumb"><a href="{{ site.Home.RelPermalink }}">首页</a><i class="fas fa-angle-right" aria-hidden="true"></i><a href="{{ "people/" | relURL }}">教师队伍</a><i class="fas fa-angle-right" aria-hidden="true"></i><span>{{ .Title }}</span></div>
+    <article class="iwin-profile-card">
+      <div class="iwin-profile-photo">{{ with $avatar }}{{ $img := .Fill "420x540 Center" }}<img src="{{ $img.RelPermalink }}" width="420" height="540" alt="{{ $.Title }}">{{ end }}</div>
+      <div class="iwin-profile-summary"><span>FACULTY</span><h2>{{ .Title }}</h2>{{ with .Params.role }}<p class="iwin-profile-role">{{ . | markdownify }}</p>{{ end }}{{ with .Params.organizations }}{{ range . }}<p class="iwin-profile-org">{{ if .url }}<a href="{{ .url }}">{{ end }}{{ .name }}{{ if .url }}</a>{{ end }}</p>{{ end }}{{ end }}{{ with .Params.bio }}<p>{{ . }}</p>{{ end }}{{ with .Params.social }}<div class="iwin-profile-social">{{ range . }}<a href="{{ .link | safeURL }}" aria-label="{{ .icon }}"><i class="{{ .icon_pack }} fa-{{ .icon }}" aria-hidden="true"></i></a>{{ end }}</div>{{ end }}</div>
+    </article>
+    {{ with .Params.interests }}<section class="iwin-profile-section"><h2>研究方向</h2><ul class="iwin-interest-list">{{ range . }}<li>{{ . }}</li>{{ end }}</ul></section>{{ end }}
+    {{ with .Content }}<section class="iwin-profile-section"><h2>人物介绍</h2><div class="article-style">{{ . }}</div></section>{{ end }}
+    {{ with .Params.education.courses }}<section class="iwin-profile-section"><h2>教育经历</h2><ul class="iwin-education-list">{{ range . }}<li><strong>{{ .course }}</strong><span>{{ .institution }}{{ with .year }} · {{ . }}{{ end }}</span></li>{{ end }}</ul></section>{{ end }}
+  </main>
+</div>
+{{ end }}

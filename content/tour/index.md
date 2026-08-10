@@ -4,47 +4,21 @@ date: 2022-10-24
 type: landing
 
 sections:
-  - block: slider
+  - block: markdown
     content:
-      slides:
-        - title: 👋 欢迎来到研究所
-          content: 一起了解我们正在开展的研究工作……
-          align: center
-          background:
-            image:
-              filename: coders.jpg
-              filters:
-                brightness: 0.7
-            position: right
-            color: '#666'
-        - title: 午间学术交流 ☕️
-          content: 与团队分享知识，一起探索令人兴奋的新方向！
-          align: left
-          background:
-            image:
-              filename: contact.jpg
-              filters:
-                brightness: 0.7
-            position: center
-            color: '#555'
-        - title: 世界一流的半导体实验室
-          content: 实验室于上月正式启用！
-          align: right
-          background:
-            image:
-              filename: welcome.jpg
-              filters:
-                brightness: 0.5
-            position: center
-            color: '#333'
-          link:
-            icon: graduation-cap
-            icon_pack: fas
-            text: 加入我们
-            url: ../contact/
+      title: 中心简介
+      text: |-
+        上海交通大学自动化研究所围绕自动化、控制科学与工程、人工智能及相关交叉领域，开展基础理论研究、关键技术攻关和高层次人才培养。
+
+        研究所坚持面向学科前沿和国家重大需求，重视理论创新与工程实践相结合，积极推动网络化系统、智能控制、多智能体与无人系统、工业智能、信息物理系统安全等方向的发展。
+
+        ## 人才培养
+
+        研究所依托上海交通大学优质教学与科研平台，注重培养学生的理论基础、创新能力、工程素养和国际视野，鼓励学生在开放合作的学术环境中开展探索。
+
+        ## 开放合作
+
+        研究所积极开展校内外、国内外学术交流与科研合作，推动科研成果服务产业发展和社会进步。
     design:
-      slide_height: ''
-      is_fullscreen: true
-      loop: false
-      interval: 2000
+      columns: '1'
 ---
