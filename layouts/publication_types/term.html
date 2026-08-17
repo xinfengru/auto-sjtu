@@ -1,0 +1,31 @@
+{{ define "main" }}
+<section class="iwin-page-banner">
+  <div class="iwin-page-banner-inner">
+    <span>Research</span>
+    <h1>{{ .Title }}</h1>
+  </div>
+</section>
+
+<div class="iwin-inner-shell">
+  {{ partial "iwin/sidebar.html" . }}
+  <main class="iwin-inner-content">
+    <div class="iwin-breadcrumb">
+      <a href="{{ site.Home.RelPermalink }}">首页</a>
+      <i class="fas fa-angle-right" aria-hidden="true"></i>
+      <span>{{ .Title }}</span>
+    </div>
+
+    {{ with .Content }}
+      <div class="iwin-list-intro">{{ . }}</div>
+    {{ end }}
+
+    <div class="iwin-publication-citations">
+      {{ range $index, $item := .Pages.ByWeight }}
+        {{ partial "views/citation.html" (dict "page" $ "item" $item "index" $index) }}
+      {{ else }}
+        <p class="iwin-empty">相关内容正在整理中。</p>
+      {{ end }}
+    </div>
+  </main>
+</div>
+{{ end }}
