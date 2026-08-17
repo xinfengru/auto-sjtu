@@ -6,7 +6,7 @@ type: landing
 sections:
   - block: people
     content:
-      title: 教授
+      title: 科研团队
       user_groups:
         - 教授
       sort_by: Params.member_order
