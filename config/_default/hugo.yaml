@@ -1,7 +1,7 @@
 # Configuration of Hugo
 
 title: 上海交通大学自动化研究所
-baseURL: 'https://xinfengru.github.io/auto-sjtu/'
+baseURL: 'https://ia-sjtu.github.io/'
 
 defaultContentLanguage: zh
 hasCJKLanguage: true
