@@ -1,0 +1,45 @@
+{{ $item := .item }}
+{{ $index := .index }}
+{{ $has_attachments := partial "functions/has_attachments" $item }}
+
+<div class="pub-list-item view-citation" style="margin-bottom: 1rem">
+  <span class="iwin-pub-number" aria-hidden="true">{{ add $index 1 }}.</span>
+
+  {{ if eq (site.Params.publications.citation_style | default "apa") "apa" }}
+
+  <span class="article-metadata li-cite-author">
+    {{- $taxonomy := "authors" -}}
+    {{- range $author_index, $author := ($item.GetTerms $taxonomy) -}}
+      {{- if gt $author_index 0 }}, {{ end -}}
+      {{- $author_name := $author.LinkTitle -}}
+      {{- if eq $author.LinkTitle "白婷" -}}
+        {{- $author_name = "T. Bai" -}}
+      {{- end -}}
+      {{- if $author.RelPermalink -}}<a href="{{ $author.RelPermalink }}">{{ $author_name }}</a>{{- else -}}{{ $author_name }}{{- end -}}
+      {{- if isset $item.Params "author_notes" -}}
+        {{- with (index $item.Params.author_notes $author_index) -}}<sup class="iwin-author-note" title="{{ . }}">*</sup>{{- end -}}
+      {{- end -}}
+    {{- end -}}
+  </span>
+  ({{- $item.Date.Format "2006" -}}).
+  <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>.
+  {{ with $item.Params.publication }}{{ . | markdownify }}.{{ end }}
+  <p>{{ partial "page_links" (dict "page" $item "is_list" 1) }}</p>
+
+  {{ else }}
+
+  <span class="article-metadata li-cite-author">
+    {{ partial "page_metadata_authors" $item }}.
+  </span>
+  <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>.
+  {{ with $item.Params.publication }}{{ . | markdownify }},{{ end }}
+  {{- $item.Date.Format "2006" -}}.
+
+  {{ if $has_attachments }}
+  <div class="btn-links">
+    {{ partial "page_links" (dict "page" $item "is_list" 1) }}
+  </div>
+  {{ end }}
+
+  {{ end }}
+</div>
