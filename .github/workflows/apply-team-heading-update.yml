@@ -1,0 +1,32 @@
+name: Apply team heading update
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply website update
+        shell: bash
+        run: |
+          cat <<'PAYLOAD' | base64 -d > /tmp/team-heading-update.tgz
+          H4sIAAAAAAAAA+2XTW7bMBCFvRbgO/ACSiRKlBIBuUNvYFDUyBYqiQJJofEN2k2BAC2QoosW3RRdddcbOUZvEfovbRw7ThzbaZH5NpQ5FGfkx3mWG37e65cy5WVvADwD1dk9niWKouloWR5tMOz4jIYeC2kUUzvvh4z6nf4earlDqw1XNqWS0ty3blN8+eH+ExglQlYV1ObMg9gTHCBPaSRyP2LeKU/Boz4L/BPO01wE6WkQBs5z14zsDiFrY8U/3meOST/EMVvf//Z6qf8pC+IO22dRC154/y/0V6CBKzFwDfBqx6dhC/0ZZaj/IVitP9daioIbcHMu2tIMn3QiHq8/9aIY9T8ED9W/qDM4P6qybXLM3v/CtfqzMFjWnwaBHXf9sKt44fq7rtt1TGFKSMjo3c+rj5+u3r89tlfjrx/GP36NLi67TmYPQkKoRyPXO3H92N4wbOxMyeusqPtdp+toEKaQtU66DiEuSUspXiekAdmUMJkiZH7QktknQuY5x98vbKbR52+/L78sQq0G1esr2Tb6Zvlk13X1zeJaKtNLhwl5xRWv9FEFVWr3kcr+qbm1hmsB08ITYlQ7Ly8DXfTrm3R6IN/0Clux7QujE5LzUsOtoJKT8v9sMJ+e9k25CEy/3eeW+F5W93+jZA7WA5TexavAFr//cWj9Av1//2zU/ynGP2ej/3t3/N/3/QD9/wD87f8zc/13/H5RD/o7giAIgiAIgiAIgiAIgiDI47kG/jjsmwAoAAA=
+          PAYLOAD
+          tar -xzf /tmp/team-heading-update.tgz -C .
+      - name: Commit and push
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No changes to commit'
+          else
+            git commit -m 'Rename faculty section headers'
+            git push origin HEAD:main
+          fi
