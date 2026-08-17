@@ -14,6 +14,9 @@ main:
   - name: 科学研究
     url: publication
     weight: 60
+  - name: 实验平台
+    url: experimental-platform
+    weight: 70
   - name: 科研队伍
     identifier: research-team
     url: research-team
