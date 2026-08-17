@@ -1,0 +1,32 @@
+name: Apply publication type citation layout
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply website update
+        shell: bash
+        run: |
+          cat <<'PAYLOAD' | base64 -d > /tmp/publication-type-citation-layout.tgz
+          H4sIAG/lgmoAA+1Uy4oTQRSddb6iKGahYD8STRbS6YVuXA6D4FIq3Tfpi9WVpqoyMQwDIsys3ehGNyKIm3Gjwvg9mhnmL7xV6TyNIMxChJxFV3X3qXPq3LrdUkyGI2uiatSTmAmLQ/XUTiowkQVdhoUt5d5NEcdxp9NhbiRsjnGz3W6xZrt1L253WnRlcbNzt9XeY/GNnf8CI2OFpq3cVGcz3H+C42OWQx8VMF4KVJydnDQSA5lrBJZJYUyX4xhVUIkBBD2hFGieNhhLcjz6EyHABY2IphIqPQQDQmdFEvnb2ZuimZJ/+BitBDJOInrgpCPSThtEne0jbTR+c/MOgSlASu9DOpXQFoVknhAZzKEntO9gzkKXi5Rdxi062VBZUHa+402zngaRZ3pU9moGcQQrNPS7nIwNWggfDUsID0Ee0GcjJKpn5MjT649vrt9/SyKxWIdz5b4wrC8CoQYSAo2DwnImNIqgwDwH1eVWj4CnSYSLtb506xVbqeasan5OnDHagoUPZ8Fm6bdmk2gsVcHqIffSXtUr1UKgcrd8e2VWfhtBhtZPzKJItFpTPmD7qHJ4fodGCyW732XhAXWLCR9MnoBLvtzf+kkeIYxNNBeuz/JWjpll3PUbZ/t03KTJa2nujXhteHup64JIA6tGSbUWBcrKTnh69fZievplenY6/fz98vzD9N2ny9dfr16d/bw4//HiZRJVK+Hq0qxU301cj7nu9Q+WrH/9pe+www47rOMXSrwgWgAKAAA=
+          PAYLOAD
+          tar -xzf /tmp/publication-type-citation-layout.tgz -C .
+      - name: Commit and push
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No changes to commit'
+          else
+            git commit -m 'Use citation layout for publication type pages'
+            git push origin HEAD:main
+          fi
