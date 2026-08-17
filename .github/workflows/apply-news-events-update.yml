@@ -1,0 +1,71 @@
+name: Apply news and events update
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply website update
+        shell: bash
+        run: |
+          cat <<'PAYLOAD' | base64 -d > /tmp/news-events-update.tgz
+          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
+          aQ84HdMxHdPxyxv/A/t8vvsALgAA
+          PAYLOAD
+          tar -xzf /tmp/news-events-update.tgz -C .
+      - name: Commit and push
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No changes to commit'
+          else
+            git commit -m 'Add news and events submenu'
+            git push origin HEAD:main
+          fi
