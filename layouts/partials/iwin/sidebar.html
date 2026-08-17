@@ -3,12 +3,14 @@
 {{ $is_people := or (or (eq $section "people") (eq $section "authors")) (or (in $path "/people/") (in $path "/author/")) }}
 {{ $is_research_team := or (eq $section "research-team") (in $path "/research-team/") }}
 {{ $is_news := or (or (eq $section "post") (eq $section "event")) (or (in $path "/post/") (in $path "/event/")) }}
+{{ $is_research_output := or (or (eq $section "publication") (eq $section "publication_types")) (or (in $path "/publication/") (or (in $path "/publication-type/") (in $path "/research-results/"))) }}
 {{ $title := .Title }}
 {{ if or $is_people $is_research_team }}{{ $title = "科研团队" }}{{ end }}
 {{ if $is_news }}{{ $title = "新闻动态" }}{{ end }}
+{{ if $is_research_output }}{{ $title = "科研成果" }}{{ end }}
 
 <aside class="iwin-side-nav">
-  <div class="iwin-side-title"><span>{{ $title }}</span><small>{{ if or $is_people $is_research_team }}RESEARCH TEAM{{ else if $is_news }}NEWS & EVENTS{{ else }}OVERVIEW{{ end }}</small></div>
+  <div class="iwin-side-title"><span>{{ $title }}</span><small>{{ if or $is_people $is_research_team }}RESEARCH TEAM{{ else if $is_news }}NEWS & EVENTS{{ else if $is_research_output }}RESEARCH OUTPUTS{{ else }}OVERVIEW{{ end }}</small></div>
   <nav aria-label="栏目导航">
     {{ if or $is_people $is_research_team }}
       <a class="{{ if in $path "/professors/" }}active{{ end }}" href="{{ "research-team/professors/" | relURL }}">教授</a>
@@ -20,9 +22,10 @@
     {{ else if $is_news }}
       <a class="{{ if or (eq $section "post") (in $path "/post/") }}active{{ end }}" href="{{ "post/" | relURL }}">新闻动态</a>
       <a class="{{ if or (eq $section "event") (in $path "/event/") }}active{{ end }}" href="{{ "event/" | relURL }}">学术活动</a>
-    {{ else if or (or (eq $section "publication") (eq $section "publication_types")) (in $path "/publication/") }}
-      <a class="active" href="{{ "publication/" | relURL }}">科研成果</a>
-      <a href="{{ "people/" | relURL }}">科研团队</a>
+    {{ else if $is_research_output }}
+      <a class="{{ if in $path "/research-results/projects/" }}active{{ end }}" href="{{ "research-results/projects/" | relURL }}">科研项目</a>
+      <a class="{{ if in $path "/publication-type/article-journal/" }}active{{ end }}" href="{{ "publication-type/article-journal/" | relURL }}">期刊论文</a>
+      <a class="{{ if in $path "/publication-type/paper-conference/" }}active{{ end }}" href="{{ "publication-type/paper-conference/" | relURL }}">会议论文</a>
     {{ else if or (eq $section "tour") (in $path "/tour/") }}
       <a class="active" href="{{ "tour/" | relURL }}">研究所简介</a>
       <a href="{{ "people/" | relURL }}">科研团队</a>

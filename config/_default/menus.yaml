@@ -45,9 +45,22 @@ main:
     parent: research-team
     url: research-team/international
     weight: 46
-  - name: 科学研究
+  - name: 科研成果
+    identifier: research-results
     url: publication
     weight: 60
+  - name: 科研项目
+    parent: research-results
+    url: research-results/projects
+    weight: 61
+  - name: 期刊论文
+    parent: research-results
+    url: publication-type/article-journal
+    weight: 62
+  - name: 会议论文
+    parent: research-results
+    url: publication-type/paper-conference
+    weight: 63
   - name: 实验平台
     url: experimental-platform
     weight: 70

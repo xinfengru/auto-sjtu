@@ -34,6 +34,8 @@
               {{ $active = true }}
             {{ else if and (eq .Identifier "research-team") (or (in $current_page.RelPermalink "/research-team/") (in $current_page.RelPermalink "/author/")) }}
               {{ $active = true }}
+            {{ else if and (eq .Identifier "research-results") (or (or (in $current_page.RelPermalink "/publication/") (in $current_page.RelPermalink "/publication-type/")) (in $current_page.RelPermalink "/research-results/")) }}
+              {{ $active = true }}
             {{ end }}
             <li class="nav-item{{ if .HasChildren }} iwin-nav-dropdown{{ end }}">
               <a class="nav-link{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}"{{ if .HasChildren }} aria-haspopup="true"{{ end }}>
