@@ -422,6 +422,9 @@ a { transition: color .2s ease, background-color .2s ease, border-color .2s ease
 .iwin-content-list h2 a { color: #2d3e4e; text-decoration: none; }
 .iwin-content-list h2 a:hover { color: var(--iwin-blue); }
 .iwin-content-list p { margin: 0 0 7px; color: #7a838b; font-size: 13px; line-height: 1.7; }
+.pub-list-item.view-citation { position: relative; padding-left: 34px; }
+.iwin-pub-number { position: absolute; top: 0; left: 0; width: 25px; color: var(--iwin-deep); text-align: right; font-weight: 700; }
+.iwin-author-note { margin-left: 1px; color: var(--iwin-blue); font-size: .72em; font-weight: 700; }
 .iwin-empty { padding: 40px; color: #87919a; text-align: center; background: var(--iwin-pale); }
 .iwin-empty-inline { color: #87919a; font-size: 13px; }
 
