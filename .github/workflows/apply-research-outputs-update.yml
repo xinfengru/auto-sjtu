@@ -1,0 +1,32 @@
+name: Apply research outputs update
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply website update
+        shell: bash
+        run: |
+          cat <<'PAYLOAD' | base64 -d > /tmp/research-outputs-update.tgz
+          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
+          PAYLOAD
+          tar -xzf /tmp/research-outputs-update.tgz -C .
+      - name: Commit and push
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No changes to commit'
+          else
+            git commit -m 'Add research outputs navigation'
+            git push origin HEAD:main
+          fi
