@@ -1,0 +1,32 @@
+name: Apply filtered research team pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply website update
+        shell: bash
+        run: |
+          cat <<'PAYLOAD' | base64 -d > /tmp/filtered-team-pages-update.tgz
+          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
+          PAYLOAD
+          tar -xzf /tmp/filtered-team-pages-update.tgz -C .
+      - name: Commit and push
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No changes to commit'
+          else
+            git commit -m 'Add filtered research team pages'
+            git push origin HEAD:main
+          fi
