@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">上海交通大学自动化研究所标志</title>
+  <desc id="desc">由字母 A、自动化反馈回路和网络节点组成的蓝白圆形标志</desc>
+  <circle cx="64" cy="64" r="60" fill="#f8fbff" stroke="#d9e9f7" stroke-width="2"/>
+  <circle cx="64" cy="64" r="51" fill="none" stroke="#2e5681" stroke-width="2"/>
+  <path d="M31 86 56 37c1.6-3.1 4.3-4.8 7.8-4.8h.4c3.5 0 6.2 1.7 7.8 4.8l25 49" fill="none" stroke="#173b61" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M45 72h38" fill="none" stroke="#2b6db2" stroke-width="7" stroke-linecap="round"/>
+  <path d="M26 56c3.4-15.1 16.7-27.1 33-29.5M102 72c-3.4 15.1-16.7 27.1-33 29.5" fill="none" stroke="#67a5d8" stroke-width="4" stroke-linecap="round"/>
+  <path d="m24 47 2 9 9-2M104 81l-2-9-9 2" fill="none" stroke="#67a5d8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="25" cy="57" r="5" fill="#2b6db2"/>
+  <circle cx="64" cy="25" r="5" fill="#2b6db2"/>
+  <circle cx="103" cy="71" r="5" fill="#2b6db2"/>
+</svg>

@@ -2,7 +2,7 @@ main:
   - name: 首页
     url: /
     weight: 10
-  - name: 中心简介
+  - name: 研究所简介
     url: tour
     weight: 20
   - name: 新闻动态
@@ -11,16 +11,10 @@ main:
   - name: 教师队伍
     url: people
     weight: 40
-  - name: 学生培养
-    url: student-training
-    weight: 50
   - name: 科学研究
     url: publication
     weight: 60
-  - name: 课程教学
-    url: course-teaching
-    weight: 70
-  - name: 文化建设
+  - name: 团队文化
     url: culture
     weight: 80
   - name: 英才诚聘

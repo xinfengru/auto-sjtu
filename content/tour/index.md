@@ -1,12 +1,12 @@
 ---
-title: 中心简介
+title: 研究所简介
 date: 2022-10-24
 type: landing
 
 sections:
   - block: markdown
     content:
-      title: 中心简介
+      title: 研究所简介
       text: |-
         上海交通大学自动化研究所围绕自动化、控制科学与工程、人工智能及相关交叉领域，开展基础理论研究、关键技术攻关和高层次人才培养。
 

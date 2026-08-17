@@ -4,7 +4,8 @@
   <div class="iwin-brand-bar">
     <div class="iwin-header-inner">
       <a class="iwin-brand" href="{{ site.Home.RelPermalink }}" aria-label="返回首页">
-        <span class="iwin-brand-mark" aria-hidden="true">自</span>
+        {{ $brand_logo := resources.Get "media/logo.svg" }}
+        {{ with $brand_logo }}<img class="iwin-brand-logo" src="{{ .RelPermalink }}" width="72" height="72" alt="上海交通大学自动化研究所标志">{{ end }}
         <span class="iwin-brand-copy">
           <strong>上海交通大学自动化研究所</strong>
           <small>INSTITUTE OF AUTOMATION · SHANGHAI JIAO TONG UNIVERSITY</small>
