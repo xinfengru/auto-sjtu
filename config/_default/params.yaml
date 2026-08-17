@@ -55,7 +55,7 @@ features:
   privacy_pack:
     enable: false
   repository:
-    url: 'https://github.com/xinfengru/auto-sjtu'
+    url: 'https://github.com/IA-SJTU/IA-SJTU.github.io'
     content_dir: content
     branch: main
   avatar:
