@@ -1,12 +1,12 @@
 ---
-title: 教师队伍
+title: 科研团队
 date: 2022-10-24
 type: landing
 
 sections:
   - block: people
     content:
-      title: 认识我们的团队
+      title: 科研团队
       user_groups:
         - 教授
         - 副教授/副研究员

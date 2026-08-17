@@ -1,7 +1,7 @@
 {{ $section := .Section }}
 {{ $path := .RelPermalink }}
 {{ $english := "Overview" }}
-{{ if or (eq $section "people") (in $path "/people/") }}{{ $english = "Faculty" }}{{ end }}
+{{ if or (eq $section "people") (in $path "/people/") }}{{ $english = "Research Team" }}{{ end }}
 {{ if or (eq $section "tour") (in $path "/tour/") }}{{ $english = "About Us" }}{{ end }}
 {{ if or (eq $section "student-training") (in $path "/student-training/") }}{{ $english = "Education" }}{{ end }}
 {{ if or (eq $section "course-teaching") (in $path "/course-teaching/") }}{{ $english = "Courses" }}{{ end }}

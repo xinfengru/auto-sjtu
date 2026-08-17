@@ -4,7 +4,7 @@
 <div class="iwin-inner-shell">
   {{ partial "iwin/sidebar.html" . }}
   <main class="iwin-inner-content">
-    <div class="iwin-breadcrumb"><a href="{{ site.Home.RelPermalink }}">首页</a><i class="fas fa-angle-right" aria-hidden="true"></i><a href="{{ "people/" | relURL }}">教师队伍</a><i class="fas fa-angle-right" aria-hidden="true"></i><span>{{ .Title }}</span></div>
+    <div class="iwin-breadcrumb"><a href="{{ site.Home.RelPermalink }}">首页</a><i class="fas fa-angle-right" aria-hidden="true"></i><a href="{{ "people/" | relURL }}">科研团队</a><i class="fas fa-angle-right" aria-hidden="true"></i><span>{{ .Title }}</span></div>
     <article class="iwin-profile-card">
       <div class="iwin-profile-photo">{{ with $avatar }}{{ $img := .Fill "420x540 Center" }}<img src="{{ $img.RelPermalink }}" width="420" height="540" alt="{{ $.Title }}">{{ end }}</div>
       <div class="iwin-profile-summary"><span>FACULTY</span><h2>{{ .Title }}</h2>{{ with .Params.role }}<p class="iwin-profile-role">{{ . | markdownify }}</p>{{ end }}{{ with .Params.organizations }}{{ range . }}<p class="iwin-profile-org">{{ if .url }}<a href="{{ .url }}">{{ end }}{{ .name }}{{ if .url }}</a>{{ end }}</p>{{ end }}{{ end }}{{ with .Params.bio }}<p>{{ . }}</p>{{ end }}{{ with .Params.social }}<div class="iwin-profile-social">{{ range . }}<a href="{{ .link | safeURL }}" aria-label="{{ .icon }}"><i class="{{ .icon_pack }} fa-{{ .icon }}" aria-hidden="true"></i></a>{{ end }}</div>{{ end }}</div>
