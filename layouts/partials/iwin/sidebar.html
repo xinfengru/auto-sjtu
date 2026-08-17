@@ -11,8 +11,8 @@
   <div class="iwin-side-title"><span>{{ $title }}</span><small>{{ if or $is_people $is_research_team }}RESEARCH TEAM{{ else if $is_news }}NEWS & EVENTS{{ else }}OVERVIEW{{ end }}</small></div>
   <nav aria-label="栏目导航">
     {{ if or $is_people $is_research_team }}
-      <a class="{{ if and $is_people (not (in $path "/author/")) }}active{{ end }}" href="{{ "people/#group-0" | relURL }}">教授</a>
-      <a href="{{ "people/#group-1" | relURL }}">副教授/副研究员</a>
+      <a class="{{ if in $path "/professors/" }}active{{ end }}" href="{{ "research-team/professors/" | relURL }}">教授</a>
+      <a class="{{ if in $path "/associate-faculty/" }}active{{ end }}" href="{{ "research-team/associate-faculty/" | relURL }}">副教授/副研究员</a>
       <a class="{{ if in $path "/postdoctoral/" }}active{{ end }}" href="{{ "research-team/postdoctoral/" | relURL }}">博士后</a>
       <a class="{{ if in $path "/doctoral/" }}active{{ end }}" href="{{ "research-team/doctoral/" | relURL }}">博士生</a>
       <a class="{{ if in $path "/master/" }}active{{ end }}" href="{{ "research-team/master/" | relURL }}">硕士生</a>
