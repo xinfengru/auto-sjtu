@@ -30,6 +30,8 @@
               {{ if $current_page.IsHome }}{{ $active = true }}{{ end }}
             {{ else if in $current_page.RelPermalink $menu_path }}
               {{ $active = true }}
+            {{ else if and (eq .Identifier "news") (in $current_page.RelPermalink "/event/") }}
+              {{ $active = true }}
             {{ else if and (eq .Identifier "research-team") (or (in $current_page.RelPermalink "/research-team/") (in $current_page.RelPermalink "/author/")) }}
               {{ $active = true }}
             {{ end }}
