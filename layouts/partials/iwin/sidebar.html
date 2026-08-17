@@ -6,7 +6,7 @@
 {{ $is_research_output := or (or (eq $section "publication") (eq $section "publication_types")) (or (in $path "/publication/") (or (in $path "/publication-type/") (in $path "/research-results/"))) }}
 {{ $title := .Title }}
 {{ if or $is_people $is_research_team }}{{ $title = "科研团队" }}{{ end }}
-{{ if $is_news }}{{ $title = "新闻动态" }}{{ end }}
+{{ if $is_news }}{{ $title = "最新动态" }}{{ end }}
 {{ if $is_research_output }}{{ $title = "科研成果" }}{{ end }}
 
 <aside class="iwin-side-nav">
@@ -20,10 +20,11 @@
       <a class="{{ if in $path "/master/" }}active{{ end }}" href="{{ "research-team/master/" | relURL }}">硕士生</a>
       <a class="{{ if in $path "/international/" }}active{{ end }}" href="{{ "research-team/international/" | relURL }}">留学生</a>
     {{ else if $is_news }}
-      <a class="{{ if or (eq $section "post") (in $path "/post/") }}active{{ end }}" href="{{ "post/" | relURL }}">新闻动态</a>
+      <a class="{{ if or (eq $section "post") (in $path "/post/") }}active{{ end }}" href="{{ "post/" | relURL }}">新闻广角</a>
       <a class="{{ if or (eq $section "event") (in $path "/event/") }}active{{ end }}" href="{{ "event/" | relURL }}">学术活动</a>
     {{ else if $is_research_output }}
       <a class="{{ if in $path "/research-results/projects/" }}active{{ end }}" href="{{ "research-results/projects/" | relURL }}">科研项目</a>
+      <a class="{{ if in $path "/publication-type/book/" }}active{{ end }}" href="{{ "publication-type/book/" | relURL }}">学术专著</a>
       <a class="{{ if in $path "/publication-type/article-journal/" }}active{{ end }}" href="{{ "publication-type/article-journal/" | relURL }}">期刊论文</a>
       <a class="{{ if in $path "/publication-type/paper-conference/" }}active{{ end }}" href="{{ "publication-type/paper-conference/" | relURL }}">会议论文</a>
     {{ else if or (eq $section "tour") (in $path "/tour/") }}
@@ -32,7 +33,7 @@
       <a href="{{ "contact/" | relURL }}">联系我们</a>
     {{ else }}
       <a class="active" href="{{ .RelPermalink }}">栏目概览</a>
-      <a href="{{ "post/" | relURL }}">新闻动态</a>
+      <a href="{{ "post/" | relURL }}">最新动态</a>
       <a href="{{ "contact/" | relURL }}">联系我们</a>
     {{ end }}
   </nav>

@@ -1,5 +1,5 @@
 ---
-title: 新闻动态
+title: 新闻广角
 view: compact
 banner:
   caption: ''

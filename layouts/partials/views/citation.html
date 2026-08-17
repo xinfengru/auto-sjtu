@@ -1,6 +1,8 @@
 {{ $item := .item }}
 {{ $index := .index }}
 {{ $has_attachments := partial "functions/has_attachments" $item }}
+{{ $title_url := $item.RelPermalink }}
+{{ with $item.Params.source_url }}{{ $title_url = . }}{{ end }}
 
 <div class="pub-list-item view-citation" style="margin-bottom: 1rem">
   <span class="iwin-pub-number" aria-hidden="true">{{ add $index 1 }}.</span>
@@ -22,7 +24,7 @@
     {{- end -}}
   </span>
   ({{- $item.Date.Format "2006" -}}).
-  <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>.
+  <a href="{{ $title_url }}"{{ with $item.Params.source_url }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ $item.Title }}</a>.
   {{ with $item.Params.publication }}{{ . | markdownify }}.{{ end }}
   <p>{{ partial "page_links" (dict "page" $item "is_list" 1) }}</p>
 
@@ -31,7 +33,7 @@
   <span class="article-metadata li-cite-author">
     {{ partial "page_metadata_authors" $item }}.
   </span>
-  <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>.
+  <a href="{{ $title_url }}"{{ with $item.Params.source_url }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ $item.Title }}</a>.
   {{ with $item.Params.publication }}{{ . | markdownify }},{{ end }}
   {{- $item.Date.Format "2006" -}}.
 

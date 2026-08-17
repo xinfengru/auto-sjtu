@@ -13,6 +13,7 @@ date: '2026-07-01T00:00:00Z'
 publishDate: '2026-07-01T00:00:00Z'
 publication_types: ['article-journal']
 publication: '*IEEE Transactions on Intelligent Transportation Systems*, 27(7), 8000–8014'
+source_url: 'https://doi.org/10.1109/TITS.2026.3667725'
 abstract: ''
 summary: ''
 featured: false

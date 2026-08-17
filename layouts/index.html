@@ -38,7 +38,7 @@
           {{ range after 1 $posts }}
             <article><time datetime="{{ .Date.Format "2006-01-02" }}"><strong>{{ .Date.Format "02" }}</strong><span>{{ .Date.Format "2006.01" }}</span></time><div><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><p>{{ .Summary | plainify | truncate 74 }}</p></div></article>
           {{ end }}
-          <div class="iwin-notice-title"><span>通知公告</span><a href="{{ "event/" | relURL }}">更多</a></div>
+          <div class="iwin-notice-title"><span>学术活动</span><a href="{{ "event/" | relURL }}">更多</a></div>
           {{ range $events }}<a class="iwin-notice-item" href="{{ .RelPermalink }}"><span>{{ .Date.Format "2006-01-02" }}</span><strong>{{ .Title }}</strong></a>{{ else }}<p class="iwin-empty-inline">通知内容正在整理中</p>{{ end }}
         </div>
       </div>
