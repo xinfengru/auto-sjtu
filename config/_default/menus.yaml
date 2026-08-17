@@ -6,8 +6,17 @@ main:
     url: tour
     weight: 20
   - name: 新闻动态
+    identifier: news
     url: post
     weight: 30
+  - name: 新闻动态
+    parent: news
+    url: post
+    weight: 31
+  - name: 学术活动
+    parent: news
+    url: event
+    weight: 32
   - name: 科研团队
     identifier: research-team
     url: people
