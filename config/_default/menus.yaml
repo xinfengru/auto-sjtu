@@ -5,11 +5,11 @@ main:
   - name: 研究所简介
     url: tour
     weight: 20
-  - name: 新闻动态
+  - name: 最新动态
     identifier: news
     url: post
     weight: 30
-  - name: 新闻动态
+  - name: 新闻广角
     parent: news
     url: post
     weight: 31
@@ -53,14 +53,18 @@ main:
     parent: research-results
     url: research-results/projects
     weight: 61
+  - name: 学术专著
+    parent: research-results
+    url: publication-type/book
+    weight: 62
   - name: 期刊论文
     parent: research-results
     url: publication-type/article-journal
-    weight: 62
+    weight: 63
   - name: 会议论文
     parent: research-results
     url: publication-type/paper-conference
-    weight: 63
+    weight: 64
   - name: 实验平台
     url: experimental-platform
     weight: 70
