@@ -25,14 +25,29 @@
         <ul class="navbar-nav">
           {{ range site.Menus.main }}
             {{ $active := false }}
+            {{ $menu_path := printf "/%s/" (strings.Trim .URL "/") }}
             {{ if eq .Name "首页" }}
               {{ if $current_page.IsHome }}{{ $active = true }}{{ end }}
-            {{ else if in $current_page.RelPermalink .URL }}
+            {{ else if in $current_page.RelPermalink $menu_path }}
               {{ $active = true }}
             {{ else if and (eq .Name "教师队伍") (in $current_page.RelPermalink "/author/") }}
               {{ $active = true }}
             {{ end }}
-            <li class="nav-item"><a class="nav-link{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}"><span>{{ .Name | safeHTML }}</span></a></li>
+            <li class="nav-item{{ if .HasChildren }} iwin-nav-dropdown{{ end }}">
+              <a class="nav-link{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}"{{ if .HasChildren }} aria-haspopup="true"{{ end }}>
+                <span>{{ .Name | safeHTML }}</span>
+                {{ if .HasChildren }}<i class="fas fa-angle-down iwin-nav-caret" aria-hidden="true"></i>{{ end }}
+              </a>
+              {{ if .HasChildren }}
+                <ul class="iwin-nav-submenu" aria-label="{{ .Name }}子菜单">
+                  {{ range .Children }}
+                    {{ $child_path := printf "/%s/" (strings.Trim .URL "/") }}
+                    {{ $child_active := in $current_page.RelPermalink $child_path }}
+                    <li><a class="{{ if $child_active }}active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name | safeHTML }}</a></li>
+                  {{ end }}
+                </ul>
+              {{ end }}
+            </li>
           {{ end }}
         </ul>
       </div>

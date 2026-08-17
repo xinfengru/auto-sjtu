@@ -1,11 +1,13 @@
 {{ $section := .Section }}
 {{ $path := .RelPermalink }}
 {{ $is_people := or (or (eq $section "people") (eq $section "authors")) (or (in $path "/people/") (in $path "/author/")) }}
+{{ $is_research_team := or (eq $section "research-team") (in $path "/research-team/") }}
 {{ $title := .Title }}
 {{ if $is_people }}{{ $title = "教师队伍" }}{{ end }}
+{{ if $is_research_team }}{{ $title = "科研队伍" }}{{ end }}
 
 <aside class="iwin-side-nav">
-  <div class="iwin-side-title"><span>{{ $title }}</span><small>{{ if $is_people }}FACULTY{{ else }}OVERVIEW{{ end }}</small></div>
+  <div class="iwin-side-title"><span>{{ $title }}</span><small>{{ if $is_people }}FACULTY{{ else if $is_research_team }}RESEARCH TEAM{{ else }}OVERVIEW{{ end }}</small></div>
   <nav aria-label="栏目导航">
     {{ if $is_people }}
       <a class="active" href="{{ "people/" | relURL }}">教师</a>
@@ -21,6 +23,12 @@
       <a class="active" href="{{ "tour/" | relURL }}">研究所简介</a>
       <a href="{{ "people/" | relURL }}">教师队伍</a>
       <a href="{{ "contact/" | relURL }}">联系我们</a>
+    {{ else if or (eq $section "research-team") (in $path "/research-team/") }}
+      <a class="{{ if eq $path ("research-team/" | relURL) }}active{{ end }}" href="{{ "research-team/" | relURL }}">科研队伍</a>
+      <a class="{{ if in $path "/postdoctoral/" }}active{{ end }}" href="{{ "research-team/postdoctoral/" | relURL }}">博士后</a>
+      <a class="{{ if in $path "/doctoral/" }}active{{ end }}" href="{{ "research-team/doctoral/" | relURL }}">博士生</a>
+      <a class="{{ if in $path "/master/" }}active{{ end }}" href="{{ "research-team/master/" | relURL }}">硕士生</a>
+      <a class="{{ if in $path "/international/" }}active{{ end }}" href="{{ "research-team/international/" | relURL }}">留学生</a>
     {{ else }}
       <a class="active" href="{{ .RelPermalink }}">栏目概览</a>
       <a href="{{ "post/" | relURL }}">新闻动态</a>

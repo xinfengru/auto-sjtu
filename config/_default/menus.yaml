@@ -14,9 +14,26 @@ main:
   - name: 科学研究
     url: publication
     weight: 60
-  - name: 团队文化
-    url: culture
+  - name: 科研队伍
+    identifier: research-team
+    url: research-team
     weight: 80
+  - name: 博士后
+    parent: research-team
+    url: research-team/postdoctoral
+    weight: 81
+  - name: 博士生
+    parent: research-team
+    url: research-team/doctoral
+    weight: 82
+  - name: 硕士生
+    parent: research-team
+    url: research-team/master
+    weight: 83
+  - name: 留学生
+    parent: research-team
+    url: research-team/international
+    weight: 84
   - name: 英才诚聘
     url: recruitment
     weight: 90
