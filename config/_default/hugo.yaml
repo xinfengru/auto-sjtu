@@ -1,12 +1,15 @@
 # Configuration of Hugo
 
+
 title: 上海交通大学自动化研究所
-baseURL: 'https://xinfengru.github.io/auto-sjtu/'
+baseURL: 'https://ia-sjtu.github.io/'
+
 
 defaultContentLanguage: zh
 hasCJKLanguage: true
 defaultContentLanguageInSubdir: false
 removePathAccents: true
+
 
 enableGitInfo: false
 summaryLength: 30
@@ -34,19 +37,3 @@ taxonomies:
   tag: tags
   category: categories
   publication_type: publication_types
-  author: authors
-markup:
-  _merge: deep
-related:
-  threshold: 80
-  includeNewer: true
-  toLower: true
-  indices:
-    - name: tags
-      weight: 100
-    - name: categories
-      weight: 70
-security:
-  _merge: deep
-sitemap:
-  _merge: deep
